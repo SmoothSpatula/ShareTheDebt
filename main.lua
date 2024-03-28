@@ -1,4 +1,7 @@
 local share_debt_enabled = true
+
+log.info("Successfully loaded ".._ENV["!guid"]..".")
+
 gui.add_to_menu_bar(function()
     local new_value, clicked = ImGui.Checkbox("Enable Share Debt", share_debt_enabled)
     if clicked then
