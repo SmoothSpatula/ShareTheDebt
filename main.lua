@@ -1,4 +1,9 @@
+-- Share The Debt v1.0.0
+-- SmoothSpatula
+
 local share_debt_enabled = true
+
+-- ========== ImGui ==========
 
 gui.add_to_menu_bar(function()
     local new_value, clicked = ImGui.Checkbox("Enable Share Debt", share_debt_enabled)
@@ -6,6 +11,8 @@ gui.add_to_menu_bar(function()
         share_debt_enabled = new_value
     end
 end)
+
+-- ========== Main ==========
 
 local function add_chat_message(text)
     gm.chat_add_message(gm["@@NewGMLObject@@"](gm.constants.ChatMessage, text))
