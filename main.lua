@@ -12,22 +12,22 @@ end
 
 local currently_paying = false
 gm.post_script_hook(gm.constants.interactable_pay_cost, function(self, other, result, args)
-    if share_debt_enabled and not currently_paying then
-        local s_type = args[1].value
-        local cost = args[2].value
-        local actor = args[3].value
-        
-        if cost == 0 or s_type ~= 0 then return end
+    if not share_debt_enabled or currently_paying then return end
 
-        if actor.object_index == gm.constants.oP then
-            for i = 1, #gm.CInstance.instances_active do
-                local inst = gm.CInstance.instances_active[i]
-                if inst.object_index == gm.constants.oP and inst.id ~= actor.id then                 
-                    currently_paying = true
-                    add_chat_message(actor.user_name .. " just spent <y>$" .. math.floor(cost) .. "<w>.")
-                    gm.interactable_pay_cost(s_type, cost, inst.id)
-                    currently_paying = false
-                end
+    local s_type, cost, actor = args[1].value, args[2].value, args[3].value
+
+    if s_type ~= 0 or cost == 0 then return end --if its spending gold and more than 0
+    if actor.object_index ~= gm.constants.oP then return end
+
+    for i = 1, #gm.CInstance.instances_active do
+        local inst = gm.CInstance.instances_active[i]
+        if inst.object_index == gm.constants.oP then 
+            if inst.id == actor.id then 
+                add_chat_message(actor.user_name .. " just spent <y>$" .. math.floor(cost) .. "<w>.")
+            else
+                currently_paying = true
+                gm.interactable_pay_cost(s_type, cost, inst.id)
+                currently_paying = false
             end
         end
     end
