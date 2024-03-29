@@ -1,8 +1,8 @@
 ﻿{
 	"name": "ShareTheDebt",
-	"version_number": "1.0.2",
+	"version_number": "1.0.3",
 	"website_url": "https://github.com/SmoothSpatula/SmoothSpatula-ShareTheDebt",
-	"description": "Share Debt for Risk of Rain Returns",
+	"description": "Gold is shared among all players. Don't get greedy!",
 	"dependencies": [
 		"ReturnOfModding-ReturnOfModding-1.0.0"
 	]
