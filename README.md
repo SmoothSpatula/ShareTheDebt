@@ -1,5 +1,7 @@
 # ShareTheDebt
-Share gold spending between players
+Share gold spending between players.
+
+(Gold-Plated Bomb isn't accounted for yet)
 
 ---
 
