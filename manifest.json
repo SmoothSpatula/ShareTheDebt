@@ -1,6 +1,6 @@
 ﻿{
 	"name": "ShareTheDebt",
-	"version_number": "1.0.1",
+	"version_number": "1.0.2",
 	"website_url": "https://github.com/SmoothSpatula/SmoothSpatula-ShareTheDebt",
 	"description": "Share Debt for Risk of Rain Returns",
 	"dependencies": [
