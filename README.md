@@ -1,5 +1,5 @@
 # ShareTheDebt
-Share Debt for Risk of Rain Returns
+Gold spending is now shared between players
 
 ---
 
