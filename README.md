@@ -1,5 +1,5 @@
 # ShareTheDebt
-Gold spending is now shared between players
+Share gold spending between players
 
 ---
 
